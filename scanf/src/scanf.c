@@ -11,7 +11,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int pideSuma(int* suma);
+
+int main(void)
+{
+	int suma;
+
+	pideSuma(&suma);
+	printf("la suma es %d",suma);
+	return 0;
+}
+
+int pideSuma(int* suma)
+{
 	int num1;
 	int num2;
 
@@ -19,10 +31,6 @@ int main(void) {
 	scanf("%d",&num1);
 	printf("ingrese el numero2:");
 	scanf("%d",&num2);
-
-	int suma = num1 + num2;
-
-	printf("la suma es %d",suma);
-
+	*suma = num1 + num2;
 	return 0;
 }
