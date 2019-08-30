@@ -11,15 +11,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int getNumero(int* pUserNumber, int min,int max,int reintentos, int msg);
+#define MSG_EDAD "Ingrese la edad: "
+#define MSG_ERR "ERROR"
+
+int getNumero(int* pUserNumber, int min, int max, int reintentos, char* pMsg, char* pMsgErr);
 
 int main(void)
 {
 	int userNumber = 0;
-	int msg = 0;
 	int min = 0;
 	int max = 0;
 	int reintentos = 0;
+
 
 	printf("Ingrese el minimo: ");
 	scanf("%d",&min);
@@ -28,7 +31,7 @@ int main(void)
 	printf("Ingrese el numero de reintentos: ");
 	scanf("%d",&reintentos);
 
-	if (getNumero(&userNumber, min, max, reintentos, msg) == 0)
+	if (getNumero(&userNumber, min, max, reintentos, MSG_EDAD, MSG_ERR) == 0)
 	{
 		printf("El numero vàlido es: %d", userNumber);
 	}
@@ -45,25 +48,27 @@ int main(void)
 
 }
 
-int getNumero(int* pUserNumber, int min, int max, int reintentos, int msg)
+int getNumero(int* pUserNumber, int min, int max, int reintentos, char* pMsg, char* pMsgErr)
 {
 	int input;
 	int err = 0;
+	int traceback = 1;
+
 	do
 	{
-		printf("Ingrese un numero: ");
+		printf("%s", pMsg);
 		scanf("%d",&input);
 		if (input > max || input < min)
 		{
 			err = err + 1;
-		} else
+		}
+		else
 		{
 			*pUserNumber = input;
+			traceback = 0;
 			break;
 		}
 	} while (err != reintentos);
-	if (err == 0)
-	{
-		return 0;
-	} else return 1;
+
+	return traceback;
 }
