@@ -6,8 +6,7 @@
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
-funcion para minimo, maximo, promedio suma
-
+ funcion para minimo, maximo, promedio suma
  */
 
 
@@ -16,6 +15,12 @@ funcion para minimo, maximo, promedio suma
 #include <stdio_ext.h>
 
 #define QLY_INPUTS 5
+
+int arrayCalcMin(int *pArray, int *pResultado, int lenght);
+int arrayCalcMax(int *pArray, int *pResultado, int lenght);
+int arrayCalcProm(int *pArray, int *pResultado, int lenght);
+int arrayCalcSuma(int *pArray, int *pResultado, int lenght);
+
 int initArrayInt(int *pArray , int limite, int valor);
 int printArrayInt(int *pArray , int limite);
 int getArrayInt(	int *pArray,
@@ -35,13 +40,81 @@ int getInt(	int *pResultado,
 
 int main(void)
 {
-	int inputs[QLY_INPUTS] = {100,200,300,400,500};
-	int cantidadUsuario;
-	initArrayInt(inputs,QLY_INPUTS,22);
-	cantidadUsuario = getArrayInt(inputs,QLY_INPUTS,"Ingrese un numero?\n","Error\n",0,200,2);
+	int inputs[10];
+	int userInputsNumber;
+	int resultado = 0;
 
-	printArrayInt(inputs,cantidadUsuario);
+	userInputsNumber = getArrayInt(inputs,10,"Ingrese un numero?\n","Error\n",0,200,2);
+	printArrayInt(inputs,userInputsNumber);
+	arrayCalcSuma(inputs,&resultado,userInputsNumber);
+	printf("El resultado de la suma es: %d \n", resultado);
+
 	return EXIT_SUCCESS;
+}
+
+int arrayCalcMin(int *pArray, int *pResultado,int lenght)
+{
+	int traceback = -1;
+	int i;
+	int buffer = pArray[0];
+
+	for (i = 1; i <= lenght; ++i)
+	{
+		if(pArray[i] < buffer)
+		{
+			buffer = pArray[i];
+		}
+	};
+
+	*pResultado = buffer;
+	traceback = 0;
+
+	return traceback;
+}
+int arrayCalcMax(int *pArray, int *pResultado, int lenght)
+{
+	int traceback = -1;
+	int i;
+	int buffer = pArray[0];
+	for (i = 1; i <= lenght; ++i)
+	{
+		if(pArray[i] > buffer)
+		{
+			buffer = pArray[i];
+		}
+	}
+	traceback = 0;
+	*pResultado = buffer;
+	return traceback;
+}
+int arrayCalcProm(int *pArray, int *pResultado , int lenght)
+{
+	int traceback = -1;
+	int i;
+	int buffer = pArray[0];
+	for (i = 1; i <= lenght; ++i)
+	{
+
+		buffer = buffer + pArray[i];
+
+	}
+	buffer = buffer / lenght;
+	traceback = 0;
+	*pResultado = buffer;
+	return traceback;
+}
+int arrayCalcSuma(int *pArray, int *pResultado , int lenght)
+{
+	int traceback = -1;
+	int i;
+	int buffer = pArray[0];
+	for (i = 1; i <= lenght; ++i)
+	{
+		buffer = buffer + pArray[i];
+	}
+	traceback = 0;
+	*pResultado = buffer;
+	return traceback;
 }
 
 int initArrayInt(int *pArray , int limite, int valor)
@@ -58,8 +131,6 @@ int initArrayInt(int *pArray , int limite, int valor)
 	}
 	return retorno;
 }
-
-
 
 int printArrayInt(int *pArray , int limite)
 {
@@ -110,7 +181,7 @@ int getArrayInt(int *pArray,
 				}
 			}
 
-			printf("Continuar (s/n)? \n");
+			printf("Continue? (y/n)? \n");
 			__fpurge(stdin); // fflush(stdin)
 			scanf("%c",&respuesta);
 		}while(respuesta != 'n');
