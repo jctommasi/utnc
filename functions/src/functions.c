@@ -21,6 +21,7 @@ int arrayCalcMax(int *pArray, int *pResultado, int lenght);
 int arrayCalcProm(int *pArray, int *pResultado, int lenght);
 int arrayCalcSuma(int *pArray, int *pResultado, int lenght);
 
+int orderIntArray(int *pArray, int limite);
 int initArrayInt(int *pArray , int limite, int valor);
 int printArrayInt(int *pArray , int limite);
 int getArrayInt(	int *pArray,
@@ -42,12 +43,12 @@ int main(void)
 {
 	int inputs[10];
 	int userInputsNumber;
-	int resultado = 0;
+	//int resultado = 0;
 
 	userInputsNumber = getArrayInt(inputs,10,"Ingrese un numero?\n","Error\n",0,200,2);
 	printArrayInt(inputs,userInputsNumber);
-	arrayCalcSuma(inputs,&resultado,userInputsNumber);
-	printf("El resultado de la suma es: %d \n", resultado);
+	orderIntArray(inputs, userInputsNumber);
+	printArrayInt(inputs,userInputsNumber);
 
 	return EXIT_SUCCESS;
 }
@@ -215,16 +216,14 @@ int getInt(	int *pResultado,
 	return retorno;
 }
 
-int orderIntArray(int *pArray, int limite, int sort)
+int orderIntArray(int *pArray, int limite)
 {
 	//sort = 1 ASCENDENT -- sort = 0 DESCENDENT
 	int callback = -1;
 	int i,a,j;
-	int sorted[limite];
 
 	if(pArray != NULL && limite > 0)
 	{
-
         for (i = 0; i < limite; ++i)
         {
             for (j = i + 1; j < limite; ++j)
@@ -237,7 +236,8 @@ int orderIntArray(int *pArray, int limite, int sort)
                 }
             }
         }
+        callback = 0;
 	}
-	int callback = 0;
+
 	return callback;
 }
