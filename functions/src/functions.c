@@ -116,7 +116,6 @@ int arrayCalcSuma(int *pArray, int *pResultado , int lenght)
 	*pResultado = buffer;
 	return traceback;
 }
-
 int initArrayInt(int *pArray , int limite, int valor)
 {
 	int retorno = -1;
@@ -214,4 +213,31 @@ int getInt(	int *pResultado,
 		reintentos--;
 	} while(reintentos >= 0);
 	return retorno;
+}
+
+int orderIntArray(int *pArray, int limite, int sort)
+{
+	//sort = 1 ASCENDENT -- sort = 0 DESCENDENT
+	int callback = -1;
+	int i,a,j;
+	int sorted[limite];
+
+	if(pArray != NULL && limite > 0)
+	{
+
+        for (i = 0; i < limite; ++i)
+        {
+            for (j = i + 1; j < limite; ++j)
+            {
+                if (pArray[i] > pArray[j])
+                {
+                    a =  pArray[i];
+                    pArray[i] = pArray[j];
+                    pArray[j] = a;
+                }
+            }
+        }
+	}
+	int callback = 0;
+	return callback;
 }
