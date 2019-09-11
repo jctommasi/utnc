@@ -7,6 +7,8 @@
 
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
+#define QLY_INPUTS 5
+#define EXIT_SUCCESS 0
 
 int arrayCalcMin(int *pArray, int *pResultado, int lenght);
 int arrayCalcMax(int *pArray, int *pResultado, int lenght);
