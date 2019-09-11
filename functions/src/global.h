@@ -33,5 +33,29 @@ int getInt(	int *pResultado,
 			int maximo,
 			int reintentos);
 
+int sortDb(	int *pLegajo,
+			char *pSexo,
+			int *pEdad,
+			int *nota1p,
+			int *nota2p,
+			float *promedio,
+			int *limite);
+
+int printDbEntry(	int legajo,
+					char sexo,
+					int edad,
+					int nota1p,
+					int nota2p,
+					float promedio);
+
+int listDb(	int *pLegajo,
+			char *pSexo,
+			int *pEdad,
+			int *nota1p,
+			int *nota2p,
+			float *promedio,
+			int *limite);
+
+int addDbEntry(int legajo,char sexo,int edad,int nota1p,int nota2p,float promedio);
 
 #endif /* GLOBAL_H_ */
