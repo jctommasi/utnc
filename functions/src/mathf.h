@@ -9,6 +9,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdio_ext.h>
+
 #define MATHF_H_
 
 int getInt(int *pResultado,char *pMensaje,char *pMensajeError,int minimo,int maximo,int reintentos);

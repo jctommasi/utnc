@@ -7,9 +7,6 @@
  */
 
 #include "global.h"
-#include "mathf.h"
-#include "arrayf.h"
-#include "db_func.h"
 
 int main(void)
 {
@@ -19,6 +16,8 @@ int main(void)
 	int nota1p[DB_LENGHT];
 	int nota2p[DB_LENGHT];
 	float promedio[DB_LENGHT];
+
+
 
 	return EXIT_SUCCESS;
 }

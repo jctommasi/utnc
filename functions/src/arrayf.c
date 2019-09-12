@@ -5,6 +5,9 @@
  *      Author: alumno
  */
 
+
+#include "arrayf.h"
+
 int arrayCalcMin(int *pArray, int *pResultado,int lenght)
 {
 	int traceback = -1;

@@ -5,6 +5,8 @@
  *      Author: alumno
  */
 
+#include "db_func.h"
+
 int addDbEntry(int legajo,char sexo,int edad,int nota1p,int nota2p,float promedio)
 {
 

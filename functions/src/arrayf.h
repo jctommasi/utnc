@@ -7,6 +7,7 @@
 
 #ifndef ARRAYF_H_
 #define ARRAYF_H_
+
 #include <stdio_ext.h>
 
 int arrayCalcMin(int *pArray, int *pResultado, int lenght);

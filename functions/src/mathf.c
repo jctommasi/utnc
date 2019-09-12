@@ -5,6 +5,7 @@
  *      Author: alumno
  */
 
+#include "mathf.h"
 
 int getInt(	int *pResultado,
 			char *pMensaje,
