@@ -4,8 +4,7 @@
  *  Created on: 11 sep. 2019
  *      Author: alumno
  */
-#include <stdio.h>
-#include <stdlib.h>
+
 
 int getInt(	int *pResultado,
 			char *pMensaje,

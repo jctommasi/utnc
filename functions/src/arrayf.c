@@ -4,7 +4,6 @@
  *  Created on: 11 sep. 2019
  *      Author: alumno
  */
-#include <stdio_ext.h>
 
 int arrayCalcMin(int *pArray, int *pResultado,int lenght)
 {

@@ -7,7 +7,9 @@
  */
 
 #include "global.h"
-#define DB_LENGHT 5
+#include "mathf.h"
+#include "arrayf.h"
+#include "db_func.h"
 
 int main(void)
 {
