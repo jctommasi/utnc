@@ -16,8 +16,8 @@ int main(void)
 	int nota1p[DB_LENGHT];
 	int nota2p[DB_LENGHT];
 	float promedio[DB_LENGHT];
-
-
+	char arrayDB[DB_LENGHT][50];
+	//PRIMER CORCHETE MAXIMO POR CASILLERO, Y ULTIMO CORCHETE MAXIMO LARGO ARRAY;;
 
 	return EXIT_SUCCESS;
 }
