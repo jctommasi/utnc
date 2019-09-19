@@ -8,5 +8,6 @@
 #ifndef STRUCTF_H_
 #define STRUCTF_H_
 
+int structf_alta();
 
 #endif /* STRUCTF_H_ */
